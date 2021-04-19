@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+#wrap_container {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.button_play,
+.scroll_data {
+  display: inline-grid;
+}
+.button_play {
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.scroll_data {
+  width: 90%;
+}
+.scroll_data_display {
+  margin-left: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#parent {
+  list-style: none;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  transition: 120s linear;
+  -webkit-animation: animateFirstList 120s linear;
+  animation: animateFirstList 120s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  transform: translateX(0);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#parent > li {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.positive_inline_sybmol {
+  color: green;
+  display: inline-block;
 }
-
-@keyframes App-logo-spin {
+.negative_inline_sybmol {
+  color: red;
+  display: inline-block;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+@keyframes mymove {
   from {
-    transform: rotate(0deg);
+    left: 0px;
   }
   to {
-    transform: rotate(360deg);
+    left: 200px;
   }
 }
